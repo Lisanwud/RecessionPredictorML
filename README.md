@@ -1,4 +1,4 @@
-# Project 5: Enabling Wealth Managers to Safeguard Assets with an Economic Narratives Generator\n",
+# Project 5: Enabling Wealth Managers to Safeguard Assets with an Economic Narratives Generator
 *Abirami, Ahmad, Clarissa, Dat, Ted*
 
 ---
