@@ -23,12 +23,12 @@ This folder contains several notebooks dedicated to creating a model to address 
 - Notebook [01](./code/01_recession-prediction_data_collection.ipynb) is where we collected data and saved the cleaned data as [economic_indicators.csv](./data/economic_indicators.csv).
 - Notebook [02](./code/02_income_predictor.ipynb) is where we created a random forest model with sentiment analysis to generate economic narratives.
 
-**data:**
+**data:**  
 This folder contains the datasets used to develop our model.
 
 -  [Economic Indicators](./data/economic_indicators.csv)
 
-**images:**
+**images:**  
 This folder contains data visualizations created during our data exploration, which can explain our findings to our audience.
 
 - [Correlation Heatmap](./images/correlation_heatmap.png)
@@ -37,12 +37,12 @@ This folder contains data visualizations created during our data exploration, wh
 - [Sentiment Timeline](./images/sentiment_timeline.png)
 - [External: Federal Reserve of Economic Data (FRED) Graph of recession indicators from January 1, 1948 to March 1, 2025](./images/fredgraph.png)
 
-**other:**
+**other:**  
 README.md - The file you are reading right now. It contains the summaries, techniques used, data visualizations, conclusions, and recommended next steps of our project.
 
 ---
 
-## Data Dictionary
+## Data Dictionary  
 This data dictionary refers to [economic_indicators.csv](./data/economic_indicators.csv), which can be found in the [data](./data/) folder of this repository.  
 
 | Variable Name  |   Role  |   Full Variable Name   | Description |
@@ -71,20 +71,20 @@ We used a Random Forest model and measured the performance of its sentiment clas
 |---|---|---|
 |Accuracy|1.00|Our model accurately predicted 100% of sentiments to generate its narratives.|
 
-### Models We Considered to Answer the Problem
-Ultimately, we chose Random Forest because we are tackling a classification problem, and it's pretty fast.
+### Models We Considered to Answer the Problem  
+Ultimately, we chose Random Forest because we are tackling a classification problem, and it's pretty fast.  
 
 We considered using Recurrent Neural Networks as it is time based, but it usually needs lots of data, reshaping, the input of one layer should match input of the next - in other words, RNN requires a lot more work to generate narratives.
 
 ---
 
-## Conclusions and Recommendations
+## Conclusions and Recommendations  
 We conducted sentiment analysis to identify sentiments of the economy. Then we used the sentiment analysis as one of the inputs for GPT-2 to generate the narration, to explain the results in a way that wealth managers without an economics background can understand.  
 
 We conclude that our model answered the problem. Our model achieved an accuracy of 1.00 for sentiment classification, despite the phrasing in our generated narrations being imperfect, likely because we used an older, free version of GPT (GPT-2).
 
-### Recommendations
-None of us who worked on this project are licensed financial advisors, but we would recommend looking to what licensed experts have recommended in the past in similar economic upswings and downturns.
+### Recommendations  
+None of us who worked on this project are licensed financial advisors, but we would recommend looking to what licensed experts have recommended in the past in similar economic upswings and downturns.  
 
 Generally speaking, if our model's narrative sentiment is negative, take measures to safeguard wealth. If the narrative sentiment is positive, consider shifting into wealth-growing strategies.
 
