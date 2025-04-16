@@ -4,7 +4,9 @@
 ---
 
 ## Problem Statement  
-When you're a wealth manager, timing is critical whether you're deploying a winning investment strategy or safeguarding assets against recessions. This project attempts to predict the timing of the next recession to help wealth managers of all skill levels make timely decisions that can grow or save their clients' wealth. 
+When you're a wealth manager, timing is critical whether you're deploying a winning investment strategy or safeguarding assets against recessions.  
+  
+This project transforms complex economic indicators into approachable natural language narratives for adult wealth managers of all skill levels, using machine learning to classify economic sentiment and GPT-2 to generate readable insights that help individuals make timely decisions that can grow or save their clients' wealth. 
 
 ## The Question
 How might we confidently predict the timing of the next recession so that wealth managers can make better decisions to grow or safeguard their clients' finances?
@@ -45,7 +47,7 @@ This folder contains data visualizations created during our data exploration, wh
 **other:**  
 
 - [Slides: Economic Narratives Generator](./slide/Economic\Narratives\Generator.pdf)
-- [Our Streamlit MVP](app.py)
+- [Our Streamlit Minimum Viable Product (MVP)](economic-narratives-dashboard.streamlit.app) and the [Prototype Online](https://economic-narratives-dashboard.streamlit.app/)
 - README.md - The file you are reading right now. It contains the summaries, techniques used, data visualizations, conclusions, recommended next steps, and appendix of our project.
 
 ---
