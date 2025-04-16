@@ -477,6 +477,17 @@ def main():
         if 'selected_date' not in st.session_state:
             st.session_state.selected_date = data.index.min()
         create_header()
+            # ✅ INSERTED KPI CODE HERE
+        latest_row = combined_data.dropna().iloc[-1]
+        latest_sentiment = latest_row['sentiment']
+        latest_date = latest_row.name.strftime('%Y-%m-%d')
+        recession_prob = round(latest_row['recession_probabilities'], 1)
+
+        col1, col2, col3 = st.columns(3)
+        col1.metric("📊 Latest Sentiment", latest_sentiment.title())
+        col2.metric("🕒 Last Updated", latest_date)
+        col3.metric("📉 Recession Probability", f"{recession_prob}%")
+
         if not st.session_state.startup_complete:
             progress_bar = st.progress(st.session_state.load_progress)
             load_status = st.empty()
