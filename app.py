@@ -477,17 +477,7 @@ def main():
         if 'selected_date' not in st.session_state:
             st.session_state.selected_date = data.index.min()
         create_header()
-            # ✅ INSERTED KPI CODE HERE
-        latest_row = combined_data.dropna().iloc[-1]
-        latest_sentiment = latest_row['sentiment']
-        latest_date = latest_row.name.strftime('%Y-%m-%d')
-        recession_prob = round(latest_row['recession_probabilities'], 1)
-
-        col1, col2, col3 = st.columns(3)
-        col1.metric("📊 Latest Sentiment", latest_sentiment.title())
-        col2.metric("🕒 Last Updated", latest_date)
-        col3.metric("📉 Recession Probability", f"{recession_prob}%")
-
+         
         if not st.session_state.startup_complete:
             progress_bar = st.progress(st.session_state.load_progress)
             load_status = st.empty()
@@ -535,6 +525,17 @@ def main():
                 st.session_state.end_date = end_date
                 st.session_state.show_data = show_data_btn
                 filtered_data = combined_data.loc[st.session_state.start_date:st.session_state.end_date].copy()
+                   # ✅ INSERTED KPI CODE HERE
+                 # Dynamically update KPI metrics based on selected date range
+                latest_row = filtered_data.dropna().iloc[-1]
+                latest_sentiment = latest_row['sentiment']
+                latest_date = latest_row.name.strftime('%Y-%m-%d')
+                recession_prob = round(latest_row['recession_probabilities'], 1)
+
+                col1, col2, col3 = st.columns(3)
+                col1.metric("📊 Sentiment", latest_sentiment.title())
+                col2.metric("🕒 Date", latest_date)
+                col3.metric("📉 Recession Probability", f"{recession_prob}%")
                 if filtered_data.empty:
                     st.error(f"No data available for the selected date range ({st.session_state.start_date.strftime('%Y-%m-%d')} to {st.session_state.end_date.strftime('%Y-%m-%d')}). Please select a different range.")
                 else:
